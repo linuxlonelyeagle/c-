@@ -1,19 +1,17 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <string>
+#include <vector>
+
 using namespace std;
 
-int 
-main(void)
+int main(void)
 {
-    vector<string> strs;
-    string str;
-    while(cin>>str)
-    strs.push_back(str);
-    float sum=0;
-    for(auto i:strs)
-    {
-        sum=sum+stof(i);
+    vector<string>  vec = {"1","2"};
+    int sum = 0;
+    for (auto temp : vec){
+        sum += stoi(temp);
     }
-    cout<<sum<<endl;
+    
+    cout << sum << endl;
     return 0;
 }
