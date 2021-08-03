@@ -11,7 +11,6 @@ int main(void)
     for (auto temp : vec){
         sum += stoi(temp);
     }
-    
     cout << sum << endl;
     return 0;
 }
