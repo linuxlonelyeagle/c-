@@ -22,5 +22,6 @@ int main( void)
         cout << it[i];
     }
     cout << endl;
+    delete [] it;
     return 0;
 }
