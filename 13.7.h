@@ -15,6 +15,7 @@ class HasPtr{
         int i;
 };
 
+
 HasPtr&
 HasPtr::operator+(const HasPtr &pt)
 {
