@@ -4,6 +4,7 @@
 using namespace std;
 
 class HasPtr{
+    friend void swap(HasPtr &it1, HasPtr &it2);
     public:
         HasPtr() = default;
         HasPtr(string str,int i = 0):ps(new string(str)),it(i){}
@@ -16,13 +17,31 @@ class HasPtr{
             return *this;
         }
         ~HasPtr() { delete ps; }
+        void look();
     private:
         string *ps;
         int it;
 };
 
+void swap(HasPtr &it1, HasPtr &it2)    // 这里必须要是引用，如果不是引用的化，就会调用构造赋值函数
+{
+    using std::swap;
+    swap(it1.ps, it2.ps);
+    swap(it1.it, it2.it);
+}
+
+void HasPtr::look(void)
+{
+    cout << "string:" << *ps << endl;
+    cout << "it:"    << it << endl; 
+}
 
 int main(void)
 {
+    HasPtr it1("hello",520);
+    HasPtr it2("world",1314);
+    swap(it1,it2);
+    it1.look();
+    it2.look();
     return 0;
 }
